@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <title>HTML,CSS実験</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles2.css">
+    <script>
+        function myFunction() {
+          document.getElementById("demo2").innerHTML = "Paragraph changed.";
+        }
+        window.alert("emergency")
+        </script>
+</head>
+
+<body>
+    <a href="#C4">Jump to Chapter 4</a>
+    <h1><em>My first Heading</em></h1>
+    <hr>
+    <h2>This is Heading 2</h2>
+    <h3>This is Heading 3</h3>
+    <h4>This is Heading 4</h4>
+    <h5>This is Heading 5</h5>
+    <h6>This is Heading 6</h6>
+    <p class="red-bg"><b>My first paragraph.</b></p>
+    <p><i>This is another paragraph.</i></p>
+    <a href="https://blog.oka-net.org"><strong>This is a link</strong></a>
+    <img src="kani.jpg" alt="blog.oka-net.org" width="104" height="142">
+    <p>This is a <br>paragraph with a line break.</p>
+    <p>This is a red paragraph.</p>
+    <hr>
+    <p>
+        <sub>This paragraph</sub> contains a lot of lines <sup>in the source code,</sup> but the browser ignores it.
+    </p>
+    <p style="text-align:center;">This paragraph contains a lot of spaces in the source code, but the browser ignores
+        it.</p>
+    <blockquote cite="http://www.worldwildlife.org/who/index.html">
+        For 60 years, WWF has worked to help people and nature thrive. As the world's leading conservation organization,
+        WWF works in nearly 100 countries. At every level, we collaborate with people around the world to develop and
+        deliver innovative solutions that protect communities, wildlife, and the places in which they live.
+    </blockquote>
+    <p>WWF's goal is to: <q>Build a future where people live in harmony with nature.</q></p>
+    <address>
+        Written by John Doe.<br>
+        Visit us at:<br>
+        Example.com<br>
+        Box 564, Disneyland<br>
+        USA
+    </address>
+    <pre>
+        My Bonnie lies over the ocean.
+        My Bonnie lies over the sea.
+        My Bonnie lies over the ocean.
+        Oh, bring back my Bonnie to me.
+    </pre>
+    <p style="color:Tomato">My favorite color is <del>blue</del><ins>red</ins>.</p>
+    <h1 style="background-color:rgb(255, 99, 71);">rgb(255, 99, 71)</h1>
+    <h1 style="background-color:#ff6347;">#ff6347</h1>
+    <h1 style="background-color:hsl(9, 100%, 64%);">hsl(9, 100%, 64%)</h1>
+    <h1 style="background-color:rgba(255, 99, 71, 0.5);">rgba(255, 99, 71, 0.5)</h1>
+    <h1 style="background-color:hsla(9, 100%, 64%, 0.5);">hsla(9, 100%, 64%, 0.5)</h1>
+    <a href="https://blog.oka-net.org" target="_blank">私のブログ</a>
+    <a href="mailto:someone@example.com">Send email</a>
+    <button onclick="window.location.href='https://blog.oka-net.org';">私のブログ</button>
+    <a href="https://blog.oka-net.org" title="押してください">俺のブログ</a>
+    <a href="https://blog.oka-net.org">
+        <img src="kani.jpg" alt="カニ写真" style="width:104px;height:142px;">
+    </a>
+    <h2 id="C4">Chapter 4</h2>
+    <p><img src="kani.jpg" alt="カニ画像" style="float:left;width:104px;height:142px;">
+        The image will float to the right of the text.</p>
+    <table style="width:100%">
+        <caption>これ何の表？</caption>
+        <tr>
+            <th style="width:70%">Company</th>
+            <th>Contact</th>
+            <th>Country</th>
+        </tr>
+        <tr style="height:200px">
+            <td>Alfreds Futterkiste</td>
+            <td>Maria Anders</td>
+            <td>Germany</td>
+        </tr>
+        <tr>
+            <td>Centro comercial Moctezuma</td>
+            <td>Francisco Chang</td>
+            <td>Mexico</td>
+        </tr>
+    </table>
+    <h3>An Unordered HTML List</h3>
+
+    <ul style="list-style-type:square;">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <ul style="list-style-type:circle;">
+            <li>Black tea</li>
+            <li>Green tea</li>
+        </ul>
+        <li>Milk</li>
+    </ul>
+
+    <h3>An Ordered HTML List</h3>
+
+    <ol type="I">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <ol type="i">
+            <li>Black tea</li>
+            <li>Green tea</li>
+        </ol>
+        <li>Milk</li>
+    </ol>
+    <p id="demo2">Hello World</p>
+    <div>Hello World</div>
+    <span>Hello</span><span>World</span>
+    <p>My mother has <span style="color:blue;font-weight:bold;">blue</span> eyes and my father has <span style="color:darkolivegreen;font-weight:bold;">dark green</span> eyes.</p>
+    <button type="button" onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"'>Click Me!</button>
+    <p id="demo">JavaScript can change HTML content.</p>
+    <button type="button" onclick="myFunction()">Try it</button>
+    <button onclick="window.print()">Print this page</button>
+</body>
+
+</html>
