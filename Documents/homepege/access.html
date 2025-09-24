@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>アクセス - ○○大学テニス部</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>○○大学テニス部</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="index.html#about">部について</a></li>
+                <li><a href="index.html#activities">活動紹介</a></li>
+                <li><a href="results.html">試合結果</a></li>
+                <li><a href="index.html#members">部員紹介</a></li>
+                <li><a href="index.html#news">お知らせ</a></li>
+                <li><a href="access.html" class="active">アクセス</a></li>
+                <li><a href="sns.html">SNS</a></li>
+                <li><a href="index.html#contact">お問い合わせ</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main style="margin-top: 80px;">
+        <!-- ヘッダーセクション -->
+        <section class="page-header">
+            <div class="container">
+                <h1>アクセス</h1>
+                <p>○○大学テニス部への交通アクセス・練習場所のご案内</p>
+            </div>
+        </section>
+
+        <!-- キャンパス情報 -->
+        <section class="campus-info">
+            <div class="container">
+                <div class="campus-grid">
+                    <div class="campus-details">
+                        <h2>○○大学 キャンパス</h2>
+                        <div class="address-info">
+                            <h3>所在地</h3>
+                            <p>〒150-0001<br>
+                            東京都渋谷区神宮前1-1-1<br>
+                            ○○大学 体育施設</p>
+                        </div>
+                        
+                        <div class="contact-info">
+                            <h3>お問い合わせ</h3>
+                            <p>TEL: 03-XXXX-XXXX<br>
+                            Email: tennis@university.ac.jp</p>
+                        </div>
+
+                        <div class="facility-hours">
+                            <h3>施設利用時間</h3>
+                            <div class="hours-grid">
+                                <div class="time-slot">
+                                    <span class="day">平日</span>
+                                    <span class="time">9:00 - 21:00</span>
+                                </div>
+                                <div class="time-slot">
+                                    <span class="day">土日祝</span>
+                                    <span class="time">8:00 - 19:00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="map-container">
+                        <div class="map-placeholder">
+                            <div class="map-content">
+                                <h3>キャンパスマップ</h3>
+                                <p>テニスコートは体育館裏に位置しています</p>
+                                <!-- 実際の地図APIを使用する場合はここに埋め込み -->
+                                <div class="map-image">
+                                    <svg width="100%" height="300" viewBox="0 0 400 300" style="background: #f0f8ff;">
+                                        <!-- 道路 -->
+                                        <rect x="0" y="140" width="400" height="20" fill="#ddd"/>
+                                        <rect x="180" y="0" width="20" height="300" fill="#ddd"/>
+                                        
+                                        <!-- 建物 -->
+                                        <rect x="50" y="50" width="100" height="80" fill="#00bcd4" opacity="0.8"/>
+                                        <text x="100" y="95" text-anchor="middle" fill="white" font-size="12">本館</text>
+                                        
+                                        <rect x="220" y="60" width="80" height="60" fill="#26c6da" opacity="0.8"/>
+                                        <text x="260" y="95" text-anchor="middle" fill="white" font-size="10">図書館</text>
+                                        
+                                        <rect x="320" y="40" width="60" height="100" fill="#4dd0e1" opacity="0.8"/>
+                                        <text x="350" y="95" text-anchor="middle" fill="white" font-size="10">体育館</text>
+                                        
+                                        <!-- テニスコート -->
+                                        <rect x="300" y="170" width="80" height="100" fill="#00acc1" stroke="#006064" stroke-width="2"/>
+                                        <text x="340" y="215" text-anchor="middle" fill="white" font-size="12" font-weight="bold">テニス</text>
+                                        <text x="340" y="230" text-anchor="middle" fill="white" font-size="12" font-weight="bold">コート</text>
+                                        
+                                        <!-- 駐車場 -->
+                                        <rect x="20" y="170" width="120" height="80" fill="#b0bec5" opacity="0.6"/>
+                                        <text x="80" y="215" text-anchor="middle" fill="#333" font-size="10">駐車場</text>
+                                        
+                                        <!-- 入口 -->
+                                        <circle cx="190" cy="150" r="8" fill="#ff5722"/>
+                                        <text x="190" y="155" text-anchor="middle" fill="white" font-size="8">正門</text>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 交通手段 -->
+        <section class="transportation">
+            <div class="container">
+                <h2>交通アクセス</h2>
+                <div class="transport-grid">
+                    <div class="transport-card">
+                        <div class="transport-icon">🚃</div>
+                        <h3>電車でお越しの場合</h3>
+                        <div class="route-info">
+                            <div class="route">
+                                <span class="line jr">JR山手線</span>
+                                <span class="station">原宿駅</span>
+                                <span class="time">徒歩7分</span>
+                            </div>
+                            <div class="route">
+                                <span class="line metro">東京メトロ千代田線・副都心線</span>
+                                <span class="station">明治神宮前駅</span>
+                                <span class="time">徒歩5分</span>
+                            </div>
+                            <div class="route">
+                                <span class="line metro">東京メトロ銀座線・半蔵門線</span>
+                                <span class="station">表参道駅</span>
+                                <span class="time">徒歩12分</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="transport-card">
+                        <div class="transport-icon">🚌</div>
+                        <h3>バスでお越しの場合</h3>
+                        <div class="route-info">
+                            <div class="route">
+                                <span class="line bus">都営バス</span>
+                                <span class="station">神宮前停留所</span>
+                                <span class="time">徒歩3分</span>
+                            </div>
+                            <div class="route">
+                                <span class="line bus">渋谷区コミュニティバス</span>
+                                <span class="station">○○大学前停留所</span>
+                                <span class="time">徒歩1分</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="transport-card">
+                        <div class="transport-icon">🚗</div>
+                        <h3>お車でお越しの場合</h3>
+                        <div class="route-info">
+                            <div class="parking-info">
+                                <p><strong>駐車場完備</strong></p>
+                                <p>収容台数: 50台</p>
+                                <p>利用時間: 7:00 - 22:00</p>
+                                <p class="parking-fee">駐車料金: 最初の2時間無料<br>以降30分毎に200円</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="transport-card">
+                        <div class="transport-icon">🚲</div>
+                        <h3>自転車でお越しの場合</h3>
+                        <div class="route-info">
+                            <div class="parking-info">
+                                <p><strong>自転車駐輪場完備</strong></p>
+                                <p>収容台数: 100台</p>
+                                <p>利用時間: 24時間</p>
+                                <p class="parking-fee">駐輪料金: 無料</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- テニスコート詳細 -->
+        <section class="court-details">
+            <div class="container">
+                <h2>テニスコート施設</h2>
+                <div class="court-info-grid">
+                    <div class="court-specs">
+                        <h3>施設仕様</h3>
+                        <div class="specs-list">
+                            <div class="spec-item">
+                                <span class="spec-label">コート数</span>
+                                <span class="spec-value">6面（全面ハードコート）</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">サーフェス</span>
+                                <span class="spec-value">アクリル系ハードコート</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">夜間照明</span>
+                                <span class="spec-value">LED照明完備（全コート）</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">更衣室</span>
+                                <span class="spec-value">男女別・シャワー完備</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">クラブハウス</span>
+                                <span class="spec-value">休憩室・ミーティングルーム</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">器具保管庫</span>
+                                <span class="spec-value">ラケット・ボール保管可能</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="court-features">
+                        <h3>特徴・設備</h3>
+                        <div class="features-list">
+                            <div class="feature-item">
+                                <div class="feature-icon">✨</div>
+                                <div class="feature-content">
+                                    <h4>最新設備</h4>
+                                    <p>2022年にリニューアルした最新のテニスコートで快適な練習環境を提供</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">🌙</div>
+                                <div class="feature-content">
+                                    <h4>夜間練習対応</h4>
+                                    <p>LED照明完備により夜間練習も可能（21:00まで）</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">🏆</div>
+                                <div class="feature-content">
+                                    <h4>大会開催可能</h4>
+                                    <p>公式戦規格のコートで学内大会・練習試合を開催</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">🚿</div>
+                                <div class="feature-content">
+                                    <h4>充実の設備</h4>
+                                    <p>更衣室・シャワー室・休憩室完備で快適</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="court-gallery">
+                    <h3>コート写真</h3>
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <img src="https://via.placeholder.com/300x200/00bcd4/ffffff?text=Court+1-2" alt="コート1-2番">
+                            <p>メインコート（1-2番コート）</p>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://via.placeholder.com/300x200/26c6da/ffffff?text=Court+3-4" alt="コート3-4番">
+                            <p>練習コート（3-4番コート）</p>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://via.placeholder.com/300x200/4dd0e1/ffffff?text=Court+5-6" alt="コート5-6番">
+                            <p>練習コート（5-6番コート）</p>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://via.placeholder.com/300x200/00acc1/ffffff?text=Clubhouse" alt="クラブハウス">
+                            <p>クラブハウス・休憩室</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 練習スケジュール -->
+        <section class="practice-schedule">
+            <div class="container">
+                <h2>練習スケジュール</h2>
+                <div class="schedule-info">
+                    <p>見学・体験参加をご希望の方は、下記の練習スケジュールをご参考ください。</p>
+                </div>
+                <div class="schedule-table">
+                    <div class="schedule-header">
+                        <div class="day-cell">曜日</div>
+                        <div class="time-cell">時間</div>
+                        <div class="content-cell">練習内容</div>
+                        <div class="target-cell">対象</div>
+                    </div>
+                    <div class="schedule-row">
+                        <div class="day-cell">月</div>
+                        <div class="time-cell">16:30-19:00</div>
+                        <div class="content-cell">基礎練習・フォームチェック</div>
+                        <div class="target-cell">全学年</div>
+                    </div>
+                    <div class="schedule-row">
+                        <div class="time-cell">19:00-21:00</div>
+                        <div class="content-cell">実戦練習・ゲーム形式</div>
+                        <div class="target-cell">中級・上級者</div>
+                    </div>
+                    <div class="schedule-row">
+                        <div class="day-cell">水</div>
+                        <div class="time-cell">16:30-19:00</div>
+                        <div class="content-cell">技術練習・戦術練習</div>
+                        <div class="target-cell">全学年</div>
+                    </div>
+                    <div class="schedule-row">
+                        <div class="day-cell">金</div>
+                        <div class="time-cell">16:30-19:00</div>
+                        <div class="content-cell">フィジカル・実戦練習</div>
+                        <div class="target-cell">全学年</div>
+                    </div>
+                    <div class="schedule-row">
+                        <div class="day-cell">土</div>
+                        <div class="time-cell">13:00-17:00</div>
+                        <div class="content-cell">試合形式・練習試合</div>
+                        <div class="target-cell">全学年</div>
+                    </div>
+                </div>
+                <div class="schedule-notes">
+                    <h4>注意事項</h4>
+                    <ul>
+                        <li>雨天時は体育館での練習に変更になる場合があります</li>
+                        <li>大会期間中はスケジュールが変更になる場合があります</li>
+                        <li>見学・体験参加の際は事前にご連絡ください</li>
+                        <li>ラケット・シューズのレンタルも可能です（要予約）</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>○○大学テニス部</h3>
+                    <p>〒XXX-XXXX 東京都○○区○○ XX-XX<br>
+                    ○○大学テニスコート</p>
+                </div>
+                <div class="footer-links">
+                    <h4>リンク</h4>
+                    <ul>
+                        <li><a href="index.html">ホーム</a></li>
+                        <li><a href="index.html#about">部について</a></li>
+                        <li><a href="index.html#activities">活動紹介</a></li>
+                        <li><a href="results.html">試合結果</a></li>
+                        <li><a href="access.html">アクセス</a></li>
+                        <li><a href="sns.html">SNS</a></li>
+                        <li><a href="index.html#contact">お問い合わせ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ○○大学テニス部. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>試合結果 - ○○大学テニス部</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>○○大学テニス部</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="index.html#about">部について</a></li>
+                <li><a href="index.html#activities">活動紹介</a></li>
+                <li><a href="results.html" class="active">試合結果</a></li>
+                <li><a href="index.html#members">部員紹介</a></li>
+                <li><a href="index.html#news">お知らせ</a></li>
+                <li><a href="access.html">アクセス</a></li>
+                <li><a href="sns.html">SNS</a></li>
+                <li><a href="index.html#contact">お問い合わせ</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main style="margin-top: 80px;">
+        <!-- ヘッダーセクション -->
+        <section class="page-header">
+            <div class="container">
+                <h1>試合結果</h1>
+                <p>○○大学テニス部の大会・試合結果をご紹介します</p>
+            </div>
+        </section>
+
+        <!-- 最新結果 -->
+        <section class="latest-results">
+            <div class="container">
+                <h2>最新の試合結果</h2>
+                <div class="results-grid">
+                    <div class="result-card highlight">
+                        <div class="result-header">
+                            <h3>関東学生テニス選手権大会</h3>
+                            <span class="date">2024.09.15</span>
+                        </div>
+                        <div class="result-content">
+                            <div class="match-result win">
+                                <span class="result-badge">勝利</span>
+                                <div class="score">6-4, 6-2</div>
+                            </div>
+                            <div class="players">
+                                <div class="player our-player">
+                                    <strong>田中 太郎</strong>
+                                    <span>(○○大学)</span>
+                                </div>
+                                <div class="vs">VS</div>
+                                <div class="player opponent">
+                                    <strong>山田 花子</strong>
+                                    <span>(△△大学)</span>
+                                </div>
+                            </div>
+                            <div class="match-info">
+                                <span class="category">男子シングルス準決勝</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="result-card">
+                        <div class="result-header">
+                            <h3>関東大学対抗戦</h3>
+                            <span class="date">2024.09.08</span>
+                        </div>
+                        <div class="result-content">
+                            <div class="match-result win">
+                                <span class="result-badge">勝利</span>
+                                <div class="score">4-2</div>
+                            </div>
+                            <div class="team-match">
+                                <div class="team our-team">
+                                    <strong>○○大学</strong>
+                                </div>
+                                <div class="vs">VS</div>
+                                <div class="team opponent-team">
+                                    <strong>□□大学</strong>
+                                </div>
+                            </div>
+                            <div class="match-info">
+                                <span class="category">団体戦 1回戦</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="result-card">
+                        <div class="result-header">
+                            <h3>全日本学生テニス選手権大会</h3>
+                            <span class="date">2024.08.25</span>
+                        </div>
+                        <div class="result-content">
+                            <div class="match-result lose">
+                                <span class="result-badge">惜敗</span>
+                                <div class="score">4-6, 6-3, 4-6</div>
+                            </div>
+                            <div class="players">
+                                <div class="player our-player">
+                                    <strong>佐藤 花子</strong>
+                                    <span>(○○大学)</span>
+                                </div>
+                                <div class="vs">VS</div>
+                                <div class="player opponent">
+                                    <strong>鈴木 美咲</strong>
+                                    <span>(◇◇大学)</span>
+                                </div>
+                            </div>
+                            <div class="match-info">
+                                <span class="category">女子シングルス 2回戦</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 年間成績 -->
+        <section class="annual-results">
+            <div class="container">
+                <h2>2024年 年間成績</h2>
+                <div class="stats-overview">
+                    <div class="stat-card">
+                        <h3>総試合数</h3>
+                        <span class="stat-number">156</span>
+                    </div>
+                    <div class="stat-card">
+                        <h3>勝利数</h3>
+                        <span class="stat-number win">98</span>
+                    </div>
+                    <div class="stat-card">
+                        <h3>勝率</h3>
+                        <span class="stat-number">62.8%</span>
+                    </div>
+                    <div class="stat-card">
+                        <h3>入賞回数</h3>
+                        <span class="stat-number award">15</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 大会別結果 -->
+        <section class="tournament-results">
+            <div class="container">
+                <h2>大会別結果</h2>
+                <div class="tournament-tabs">
+                    <button class="tab-btn active" data-tournament="kanto">関東大会</button>
+                    <button class="tab-btn" data-tournament="zenkoku">全国大会</button>
+                    <button class="tab-btn" data-tournament="other">その他大会</button>
+                </div>
+
+                <div class="tournament-content">
+                    <div class="tournament-tab active" id="kanto">
+                        <div class="tournament-list">
+                            <div class="tournament-item">
+                                <div class="tournament-name">関東学生テニス選手権大会</div>
+                                <div class="tournament-date">2024年9月</div>
+                                <div class="tournament-result">
+                                    <span class="achievement">男子シングルス：ベスト4</span>
+                                    <span class="achievement">女子ダブルス：ベスト8</span>
+                                </div>
+                            </div>
+                            <div class="tournament-item">
+                                <div class="tournament-name">関東大学対抗戦</div>
+                                <div class="tournament-date">2024年9月</div>
+                                <div class="tournament-result">
+                                    <span class="achievement">団体戦：ベスト16</span>
+                                </div>
+                            </div>
+                            <div class="tournament-item">
+                                <div class="tournament-name">関東学生春季テニス大会</div>
+                                <div class="tournament-date">2024年5月</div>
+                                <div class="tournament-result">
+                                    <span class="achievement">男子ダブルス：ベスト8</span>
+                                    <span class="achievement">女子シングルス：2回戦進出</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tournament-tab" id="zenkoku">
+                        <div class="tournament-list">
+                            <div class="tournament-item">
+                                <div class="tournament-name">全日本学生テニス選手権大会</div>
+                                <div class="tournament-date">2024年8月</div>
+                                <div class="tournament-result">
+                                    <span class="achievement">男子シングルス：1回戦敗退</span>
+                                    <span class="achievement">女子シングルス：2回戦進出</span>
+                                </div>
+                            </div>
+                            <div class="tournament-item">
+                                <div class="tournament-name">全日本大学対抗テニス王座決定試合</div>
+                                <div class="tournament-date">2024年7月</div>
+                                <div class="tournament-result">
+                                    <span class="achievement">団体戦：予選敗退</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tournament-tab" id="other">
+                        <div class="tournament-list">
+                            <div class="tournament-item">
+                                <div class="tournament-name">早慶戦テニス大会</div>
+                                <div class="tournament-date">2024年6月</div>
+                                <div class="tournament-result">
+                                    <span class="achievement">総合3位</span>
+                                </div>
+                            </div>
+                            <div class="tournament-item">
+                                <div class="tournament-name">東京都学生テニス選手権大会</div>
+                                <div class="tournament-date">2024年4月</div>
+                                <div class="tournament-result">
+                                    <span class="achievement">男子シングルス：優勝</span>
+                                    <span class="achievement">女子ダブルス：準優勝</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 個人成績 -->
+        <section class="individual-results">
+            <div class="container">
+                <h2>個人成績ランキング</h2>
+                <div class="ranking-tabs">
+                    <button class="tab-btn active" data-ranking="singles">シングルス</button>
+                    <button class="tab-btn" data-ranking="doubles">ダブルス</button>
+                </div>
+
+                <div class="ranking-content">
+                    <div class="ranking-tab active" id="singles">
+                        <div class="ranking-section">
+                            <h3>男子シングルス</h3>
+                            <div class="ranking-list">
+                                <div class="ranking-item rank-1">
+                                    <div class="rank">1位</div>
+                                    <div class="player-info">
+                                        <div class="player-name">田中 太郎</div>
+                                        <div class="player-year">4年</div>
+                                    </div>
+                                    <div class="player-stats">
+                                        <span>勝率: 78.5%</span>
+                                        <span>22勝 6敗</span>
+                                    </div>
+                                </div>
+                                <div class="ranking-item rank-2">
+                                    <div class="rank">2位</div>
+                                    <div class="player-info">
+                                        <div class="player-name">鈴木 次郎</div>
+                                        <div class="player-year">3年</div>
+                                    </div>
+                                    <div class="player-stats">
+                                        <span>勝率: 71.2%</span>
+                                        <span>19勝 8敗</span>
+                                    </div>
+                                </div>
+                                <div class="ranking-item rank-3">
+                                    <div class="rank">3位</div>
+                                    <div class="player-info">
+                                        <div class="player-name">高橋 三郎</div>
+                                        <div class="player-year">2年</div>
+                                    </div>
+                                    <div class="player-stats">
+                                        <span>勝率: 65.8%</span>
+                                        <span>16勝 8敗</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ranking-section">
+                            <h3>女子シングルス</h3>
+                            <div class="ranking-list">
+                                <div class="ranking-item rank-1">
+                                    <div class="rank">1位</div>
+                                    <div class="player-info">
+                                        <div class="player-name">佐藤 花子</div>
+                                        <div class="player-year">3年</div>
+                                    </div>
+                                    <div class="player-stats">
+                                        <span>勝率: 82.1%</span>
+                                        <span>23勝 5敗</span>
+                                    </div>
+                                </div>
+                                <div class="ranking-item rank-2">
+                                    <div class="rank">2位</div>
+                                    <div class="player-info">
+                                        <div class="player-name">山田 美咲</div>
+                                        <div class="player-year">2年</div>
+                                    </div>
+                                    <div class="player-stats">
+                                        <span>勝率: 75.0%</span>
+                                        <span>18勝 6敗</span>
+                                    </div>
+                                </div>
+                                <div class="ranking-item rank-3">
+                                    <div class="rank">3位</div>
+                                    <div class="player-info">
+                                        <div class="player-name">田村 愛</div>
+                                        <div class="player-year">4年</div>
+                                    </div>
+                                    <div class="player-stats">
+                                        <span>勝率: 68.4%</span>
+                                        <span>13勝 6敗</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ranking-tab" id="doubles">
+                        <div class="ranking-section">
+                            <h3>男子ダブルス</h3>
+                            <div class="ranking-list">
+                                <div class="ranking-item rank-1">
+                                    <div class="rank">1位</div>
+                                    <div class="player-info">
+                                        <div class="player-name">田中・鈴木ペア</div>
+                                        <div class="player-year">4年・3年</div>
+                                    </div>
+                                    <div class="player-stats">
+                                        <span>勝率: 85.0%</span>
+                                        <span>17勝 3敗</span>
+                                    </div>
+                                </div>
+                                <div class="ranking-item rank-2">
+                                    <div class="rank">2位</div>
+                                    <div class="player-info">
+                                        <div class="player-name">高橋・伊藤ペア</div>
+                                        <div class="player-year">2年・2年</div>
+                                    </div>
+                                    <div class="player-stats">
+                                        <span>勝率: 73.3%</span>
+                                        <span>14勝 5敗</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ranking-section">
+                            <h3>女子ダブルス</h3>
+                            <div class="ranking-list">
+                                <div class="ranking-item rank-1">
+                                    <div class="rank">1位</div>
+                                    <div class="player-info">
+                                        <div class="player-name">佐藤・山田ペア</div>
+                                        <div class="player-year">3年・2年</div>
+                                    </div>
+                                    <div class="player-stats">
+                                        <span>勝率: 80.0%</span>
+                                        <span>16勝 4敗</span>
+                                    </div>
+                                </div>
+                                <div class="ranking-item rank-2">
+                                    <div class="rank">2位</div>
+                                    <div class="player-info">
+                                        <div class="player-name">田村・石井ペア</div>
+                                        <div class="player-year">4年・3年</div>
+                                    </div>
+                                    <div class="player-stats">
+                                        <span>勝率: 71.4%</span>
+                                        <span>15勝 6敗</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>○○大学テニス部</h3>
+                    <p>〒XXX-XXXX 東京都○○区○○ XX-XX<br>
+                    ○○大学テニスコート</p>
+                </div>
+                <div class="footer-links">
+                    <h4>リンク</h4>
+                    <ul>
+                        <li><a href="index.html">ホーム</a></li>
+                        <li><a href="index.html#about">部について</a></li>
+                        <li><a href="index.html#activities">活動紹介</a></li>
+                        <li><a href="results.html">試合結果</a></li>
+                        <li><a href="access.html">アクセス</a></li>
+                        <li><a href="sns.html">SNS</a></li>
+                        <li><a href="index.html#contact">お問い合わせ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ○○大学テニス部. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="results.js"></script>
+</body>
+</html>
