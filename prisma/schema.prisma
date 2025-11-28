@@ -1,0 +1,261 @@
+model PasswordResetToken {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  token     String   @unique
+  expiresAt DateTime
+  used      Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  user      User     @relation(fields: [userId], references: [id])
+}
+model RefreshToken {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  token     String   @unique
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+  revoked   Boolean  @default(false)
+
+  user      User     @relation(fields: [userId], references: [id])
+}
+model Notification {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  type      String   // 例: 'group_invite', 'group_approved', 'task_completed', 'boss_defeated', 'reward'
+  message   String
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  user      User     @relation(fields: [userId], references: [id])
+}
+
+model ActivityLog {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  action    String   // 例: 'task_completed', 'group_joined', 'boss_defeated', 'item_gacha', etc.
+  detail    String?
+  createdAt DateTime @default(now())
+
+  user      User     @relation(fields: [userId], references: [id])
+}
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           Int      @id @default(autoincrement())
+  email        String   @unique
+  passwordHash String
+  authMethod   String   @default("email")
+  name         String?
+  avatarUrl    String?
+  bio          String?
+  points       Int      @default(0)
+  role         String   @default("member") // "admin" or "member"
+  createdAt    DateTime @default(now())
+
+  goals        Goal[]
+  tasks        Task[]
+  memberships  Membership[]
+  reactions    Reaction[]
+  ownedGroups  Group[]
+  gachaRecords GachaRecord[]
+  ownedItems   OwnedItem[]
+  bossStatuses UserBossStatus[]
+  bossParticipations BossParticipant[]
+  notifications Notification[]
+  activityLogs ActivityLog[]
+  refreshTokens RefreshToken[]
+  passwordResetTokens PasswordResetToken[]
+  userAchievements UserAchievement[]
+  gachaBatches  GachaBatch[]
+}
+
+model Goal {
+  id         Int       @id @default(autoincrement())
+  ownerId    Int
+  title      String
+  description String?
+  deadline   DateTime?
+  createdAt  DateTime  @default(now())
+
+  owner      User      @relation(fields: [ownerId], references: [id])
+  subGoals   SubGoal[]
+}
+
+model SubGoal {
+  id          Int      @id @default(autoincrement())
+  goalId      Int
+  title       String
+  status      String   @default("todo")
+  createdAt   DateTime @default(now())
+  completedAt DateTime?
+
+  goal        Goal     @relation(fields: [goalId], references: [id])
+}
+
+model Task {
+  id          Int      @id @default(autoincrement())
+  ownerId     Int
+  title       String
+  description String?
+  dueDate     DateTime?
+  status      String   @default("todo")
+  completedAt DateTime?
+  createdAt   DateTime @default(now())
+
+  owner       User     @relation(fields: [ownerId], references: [id])
+}
+
+model Group {
+  id         Int       @id @default(autoincrement())
+  name       String
+  description String?
+  isPublic   Boolean   @default(true)
+  ownerId    Int
+  createdAt  DateTime  @default(now())
+
+  owner      User      @relation(fields: [ownerId], references: [id])
+  members    Membership[]
+}
+
+model Membership {
+  id        Int     @id @default(autoincrement())
+  groupId   Int
+  userId    Int
+  role      String  @default("member")
+  status    String  @default("member")
+
+  group     Group   @relation(fields: [groupId], references: [id])
+  user      User    @relation(fields: [userId], references: [id])
+}
+
+model Reaction {
+  id         Int      @id @default(autoincrement())
+  actorId    Int
+  targetType String
+  targetId   Int
+  type       String
+  createdAt  DateTime @default(now())
+
+  actor      User     @relation(fields: [actorId], references: [id])
+}
+
+model Item {
+  id        Int      @id @default(autoincrement())
+  name      String
+  rarity    String
+  power     Int?
+  createdAt DateTime @default(now())
+
+  records   GachaRecord[]
+  ownedItems OwnedItem[]
+}
+
+model GachaRecord {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  itemId    Int
+  batchId   Int?
+  createdAt DateTime @default(now())
+
+  user      User     @relation(fields: [userId], references: [id])
+  item      Item     @relation(fields: [itemId], references: [id])
+  batch     GachaBatch? @relation(fields: [batchId], references: [id])
+}
+
+model OwnedItem {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  itemId    Int
+  acquiredAt DateTime @default(now())
+  equipped  Boolean  @default(false)
+
+  user      User     @relation(fields: [userId], references: [id])
+  item      Item     @relation(fields: [itemId], references: [id])
+}
+
+model GachaBatch {
+  id        Int      @id @default(autoincrement())
+  userId    Int
+  count     Int
+  totalCost Int
+  createdAt DateTime @default(now())
+
+  user      User     @relation(fields: [userId], references: [id])
+  records   GachaRecord[]
+}
+
+model Boss {
+  id        Int      @id @default(autoincrement())
+  name      String
+  maxHp     Int
+  reward    Int      @default(50)
+  createdAt DateTime @default(now())
+
+  statuses  UserBossStatus[]
+  instances BossInstance[]
+}
+
+model UserBossStatus {
+  id        Int      @id @default(autoincrement())
+  bossId    Int
+  userId    Int
+  hp        Int
+  startedAt DateTime @default(now())
+  finished  Boolean  @default(false)
+
+  boss      Boss     @relation(fields: [bossId], references: [id])
+  user      User     @relation(fields: [userId], references: [id])
+}
+
+model BossInstance {
+  id        Int      @id @default(autoincrement())
+  bossId    Int
+  hp        Int
+  maxHp     Int
+  createdAt DateTime @default(now())
+  finished  Boolean  @default(false)
+
+  boss      Boss     @relation(fields: [bossId], references: [id])
+  participants BossParticipant[]
+}
+
+model BossParticipant {
+  id          Int    @id @default(autoincrement())
+  instanceId  Int
+  userId      Int
+  damageDone  Int    @default(0)
+
+  instance    BossInstance @relation(fields: [instanceId], references: [id])
+  user        User         @relation(fields: [userId], references: [id])
+  @@unique([instanceId, userId])
+}
+
+model Achievement {
+  id          Int      @id @default(autoincrement())
+  code        String   @unique // e.g., 'first_task', 'first_gacha', 'first_boss'
+  title       String
+  description String?
+  createdAt   DateTime @default(now())
+
+  users       UserAchievement[]
+}
+
+model UserAchievement {
+  id             Int          @id @default(autoincrement())
+  userId         Int
+  achievementId  Int
+  earnedAt       DateTime     @default(now())
+
+  user           User         @relation(fields: [userId], references: [id])
+  achievement    Achievement  @relation(fields: [achievementId], references: [id])
+
+  @@unique([userId, achievementId])
+}
+
