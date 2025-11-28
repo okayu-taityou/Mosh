@@ -1,0 +1,68 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Prisma generate
+        run: npx prisma generate
+
+      - name: Prisma db push (sync schema)
+        run: npm run prisma:push
+
+      - name: Start server
+        run: |
+          nohup node index.js > server.log 2>&1 &
+          # wait for server
+          for i in $(seq 1 30); do
+            if curl -sSf http://localhost:3000/ping >/dev/null 2>&1; then
+              echo "server up"; break
+            fi
+            echo "waiting for server... ($i)"; sleep 1
+          done
+
+      - name: Run security scan
+        run: |
+          node scripts/security-scan.js > security-scan.txt || true
+
+      - name: Upload security scan
+        uses: actions/upload-artifact@v4
+        with:
+          name: security-scan
+          path: security-scan.txt
+
+      - name: Run auth-guard-test
+        run: node scripts/auth-guard-test.js
+
+      - name: Password reset response check
+        run: node scripts/password_reset_check.js
+
+      - name: Run flow-test
+        env:
+          BASE_URL: http://localhost:3000
+          FAST_REGISTER: '1'
+        run: npm run flow-test
+
+      - name: Upload server log (on failure)
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: server-log
+          path: server.log
